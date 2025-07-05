@@ -12,16 +12,7 @@ The goal is to keep everything organized in one place without the need for login
 
 🗂️ Project Folder Structure:
 
-StudySync/
-│
-├── index.html               → Home page (dashboard overview)
-├── assignments.html         → Assignments tracking page
-├── subjects.html            → Subject resource manager
-├── notes.html               → Sticky notes placeholder
-├── timer.html               → Pomodoro timer module
-├── style.css                → Common styling for all pages
-├── StudySync Logo.png       → Project logo
-└── README.txt               → Project documentation (this file)
+``` 📁 Project Folder Structure: StudySync/ ├── index.html → Home page (dashboard overview) ├── assignments.html → Assignments tracking page ├── subjects.html → Subject resource manager ├── notes.html → Sticky notes placeholder ├── timer.html → Pomodoro timer module ├── style.css → Common styling for all pages ├── StudySync Logo.png → Project logo └── README.txt → Project documentation (this file) ``
 
 ------------------------------------------------------------
 
