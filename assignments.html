@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignments | StudySync</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-container">
+      <img src="StudySync logo.png" alt="StudySync Logo" class="logo" />
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="assignments.html">Assignments</a>
+      <a href="subjects.html">Subjects</a>
+      <a href="notes.html">Notes</a>
+      <a href="timer.html">Timer</a>
+    </nav>
+    <div class="theme-toggle">
+      <i class="fas fa-sun theme-icon"></i>
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider"></span>
+      </label>
+      <i class="fas fa-moon theme-icon"></i>
+    </div>
+  </header>
+
+  <div class="container">
+   <div class="card">
+  <h2><i class="fas fa-tasks"></i> Add New Assignment</h2>
+  <form id="assignmentForm" class="styled-form">
+    <div class="form-group">
+      <label for="title">📌 Title</label>
+      <input type="text" id="title" placeholder="e.g. Math Chapter 3" required />
+    </div>
+    <div class="form-group">
+      <label for="subject">📚 Subject</label>
+      <input type="text" id="subject" placeholder="e.g. Mathematics" required />
+    </div>
+    <div class="form-group">
+      <label for="deadline">🗓️ Deadline</label>
+      <input type="date" id="deadline" required />
+    </div>
+    <div class="form-group">
+      <label for="type">📂 Type</label>
+      <select id="type">
+        <option>Homework</option>
+        <option>Project</option>
+        <option>Reading</option>
+        <option>Quiz</option>
+        <option>Group Work</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="details">📝 Details</label>
+      <textarea id="details" placeholder="Add details or links here..."></textarea>
+    </div>
+    <button type="submit" class="btn">➕ Add Assignment</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>📖 Your Assignments</h2>
+  <ul id="assignmentList" class="assignment-list"></ul>
+</div>
+  </div>
+
+  <footer>Developed by Shreyas Bhandary</footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudySync | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body onload="initializePage()">
+ <header>
+  <div class="navbar-container">
+    <a href="index.html" class="logo-container">
+      <img src="StudySync logo.png" alt="StudySync Logo" class="logo" />
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="assignments.html">Assignments</a>
+      <a href="subjects.html">Subjects</a>
+      <a href="notes.html">Notes</a>
+      <a href="timer.html">Timer</a>
+    </nav>
+
+    <div class="theme-toggle">
+      <i class="fas fa-sun" id="sun-icon"></i>
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider"></span>
+      </label>
+      <i class="fas fa-moon" id="moon-icon"></i>
+    </div>
+  </div>
+</header>
+
+  <main class="container">
+
+   <section class="welcome-section card">
+  <div class="welcome-row">
+    <div class="date" id="date"></div>
+    <div class="welcome-message" id="welcome-msg">Welcome!</div>
+    <div class="time" id="time"></div>
+  </div>
+</section>
+
+
+    <section class="card quote-card">
+      <h3>📖 Daily Motivation</h3>
+      <p id="quote">Loading...</p>
+    </section>
+
+    <section class="card buttons-section">
+      <h3>🎯 Dashboard Shortcuts</h3>
+      <div class="button-group">
+        <a href="assignments.html" class="btn">📌 View Assignments</a>
+        <a href="notes.html" class="btn">📝 Open Notes</a>
+        <a href="timer.html" class="btn">⏱️ Start Timer</a>
+      </div>
+    </section>
+
+    <section class="card tip-section">
+      <h3>🌟 Study Tip</h3>
+      <p>Take a 5-minute stretch break every 30 minutes of studying. Your brain and body will thank you!</p>
+    </section>
+  </main>
+
+  <footer>
+    Developed by Shreyas Bhandary
+  </footer>
+
+<script>
+  const quotes = [
+    "Push yourself, because no one else is going to do it for you.",
+    "Success doesn’t come from what you do occasionally. It comes from what you do consistently.",
+    "Don’t watch the clock; do what it does. Keep going.",
+    "Start where you are. Use what you have. Do what you can."
+  ];
+
+  function initializePage() {
+    const name = localStorage.getItem('studentName') || prompt("What's your name?");
+    localStorage.setItem('studentName', name);
+    document.getElementById("welcome-msg").innerText = `Welcome, ${name}!`;
+
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote").innerText = quote;
+
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById("date").innerText = now.toLocaleDateString();
+      document.getElementById("time").innerText = now.toLocaleTimeString();
+    }, 1000);
+  }
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>
