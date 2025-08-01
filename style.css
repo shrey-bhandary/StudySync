@@ -1,28 +1,24 @@
-
+/* ===== GENERAL LAYOUT ===== */
 body {
-  display : flex;
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background-color: #f5f7fa;
   margin: 0;
   padding: 0;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-
+/* ===== TYPOGRAPHY ===== */
 h2, h3 {
   color: #002244;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
   background-color: #002244;
   padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
 }
 
 .navbar-container {
@@ -32,7 +28,6 @@ header {
   width: 100%;
 }
 
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -40,16 +35,14 @@ header {
 
 .logo {
   height: 40px;
-  vertical-align: middle;
   cursor: pointer;
 }
 
+/* ===== NAVIGATION ===== */
 .nav-links {
   display: flex;
   gap: 30px;
-  justify-content: center;
   align-items: center;
-  flex: 1;
 }
 
 .nav-links a {
@@ -71,17 +64,17 @@ header {
   color: #002244;
 }
 
-/* Dark theme active link fix */
 .dark-theme .nav-links a.active {
   background-color: #e0e0e0;
   color: #002244;
 }
-/* Theme Toggle */
+
+/* ===== THEME TOGGLE ===== */
 .theme-toggle {
   display: flex;
   align-items: center;
   gap: 10px;
-  color : white;
+  color: white;
 }
 
 .theme-icon {
@@ -114,19 +107,19 @@ header {
   right: 0; bottom: 0;
   background-color: #ccc;
   border-radius: 25px;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
   content: "";
+  position: absolute;
   height: 18px;
   width: 18px;
   left: 4px;
   bottom: 4px;
   background-color: white;
   border-radius: 50%;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -137,34 +130,34 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
+/* ===== MAIN CONTAINER ===== */
 .container {
   max-width: 1000px;
   margin: auto;
-  padding: 20px;
+  padding: 30px 20px;
+  flex-grow: 1;
 }
 
+/* ===== CARDS ===== */
 .card {
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
   padding: 25px 30px;
   margin-bottom: 30px;
   transition: box-shadow 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme .card {
   background-color: #14273e;
+  color: white;
 }
 
-.button-group {
-  display: flex;
-  gap: 15px;
-}
-
+/* ===== FORMS ===== */
 .styled-form,
 form {
   display: flex;
@@ -205,6 +198,7 @@ textarea {
   border: 1px solid #3c597c;
 }
 
+/* ===== BUTTONS ===== */
 .btn {
   background-color: #0066cc;
   color: white;
@@ -220,7 +214,12 @@ textarea {
   background-color: #004a99;
 }
 
-/* Welcome Section */
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+/* ===== WELCOME SECTION ===== */
 .welcome-row {
   display: flex;
   justify-content: space-between;
@@ -244,25 +243,13 @@ textarea {
   color: #002244;
 }
 
-.dark-theme {
-  background-color: #0d1a2d;
-  color: #e0e0e0;
-}
-
-.dark-theme .card {
-  background-color: #14273e;
-  color: #e0e0e0;
- h2,h3{
-  color: #e0e0e0;
-}
-}
-
 .dark-theme .welcome-message,
 .dark-theme .date,
 .dark-theme .time {
   color: white;
 }
 
+/* ===== LISTS ===== */
 .assignment-list {
   list-style: none;
   padding-left: 0;
@@ -279,11 +266,9 @@ textarea {
   background-color: #1a2c46;
 }
 
+/* ===== FOOTER (Flex Safe) ===== */
 footer {
-  position : absolute;
-  left = 0;
-  bottom = 0;
-  width: 100%;
+  margin-top: auto;
   background-color: #022341;
   color: white;
   text-align: center;
