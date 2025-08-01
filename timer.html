@@ -2,53 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StudySync | Home</title>
+  <title>StudySync | Timer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body onload="initializePage()">
- <header>
-  <div class="navbar-container">
-    <a href="index.html" class="logo-container">
-      <img src="StudySync Logo.png" alt="StudySync Logo" class="logo" />
-    </a>
+<body>
 
-    <nav class="nav-links">
+  <header>
+    <div class="header-left logo-container">
+      <a href="index.html"><img src="StudySync Logo.png" alt="StudySync Logo" class="logo" /></a>
+    </div>
+    <div class="header-center nav-links">
       <a href="index.html">Home</a>
       <a href="assignments.html">Assignments</a>
       <a href="subjects.html">Subjects</a>
       <a href="notes.html">Notes</a>
       <a href="timer.html" class="active">Timer</a>
-    </nav>
-
-    <div class="theme-toggle">
-      <i class="fas fa-sun" id="sun-icon"></i>
+    </div>
+    <div class="header-right">
+      <i class="fas fa-sun theme-icon"></i>
       <label class="switch">
-        <input type="checkbox" id="themeToggle" />
+        <input type="checkbox" id="themeToggle">
         <span class="slider"></span>
       </label>
-      <i class="fas fa-moon" id="moon-icon"></i>
+      <i class="fas fa-moon theme-icon"></i>
     </div>
-  </div>
-</header>
-  
-  <div class="container">
-    <div class="card">
+  </header>
+
+  <main class="container">
+    <div class="card" style="text-align: center;">
       <h2><i class="fas fa-stopwatch"></i> Pomodoro Timer</h2>
-      <div id="timerDisplay" style="font-size: 3rem; text-align: center;">25:00</div>
-      <div class="button-group" style="justify-content: center; margin-top: 20px;">
+      <div id="timerDisplay" style="font-size: 3.5rem; font-weight: bold; margin: 25px 0;">25:00</div>
+      <div class="button-group" style="justify-content: center;">
         <button class="btn" onclick="startTimer()">▶️ Start</button>
         <button class="btn" onclick="pauseTimer()">⏸️ Pause</button>
         <button class="btn" onclick="resetTimer()">🔄 Reset</button>
       </div>
     </div>
-  </div>
+  </main>
 
-  <footer>
-    Developed by Shreyas Bhandary
-  </footer>
+  <footer>© 2025 StudySync. All rights reserved.</footer>
   <script src="script.js"></script>
 </body>
 </html>
