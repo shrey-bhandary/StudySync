@@ -4,22 +4,20 @@
   <meta charset="UTF-8" />
   <title>StudySync | Subjects</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header>
-    <div class="header-left logo-container">
-      <a href="index.html"><img src="StudySync Logo.png" alt="StudySync Logo" class="logo" /></a>
-    </div>
-    <div class="header-center nav-links">
+    <a href="index.html"><img src="StudySync Logo.png" class="logo" alt="StudySync Logo"></a>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="assignments.html">Assignments</a>
       <a href="subjects.html" class="active">Subjects</a>
       <a href="notes.html">Notes</a>
       <a href="timer.html">Timer</a>
-    </div>
-    <div class="header-right">
+    </nav>
+    <div class="theme-toggle">
       <i class="fas fa-sun theme-icon"></i>
       <label class="switch">
         <input type="checkbox" id="themeToggle">
@@ -32,24 +30,24 @@
   <main class="container">
     <div class="card">
       <h2><i class="fas fa-book"></i> Add Subject Resource</h2>
-      <form id="subjectForm" class="styled-form">
+      <form id="subjectForm">
         <div class="form-group">
-          <label>📘 Subject</label>
-          <input type="text" id="subName" placeholder="e.g. Chemistry" required />
+          <label for="subName">Subject</label>
+          <input type="text" id="subName" required />
         </div>
         <div class="form-group">
-          <label>🔗 Resource Link</label>
-          <input type="url" id="subLink" placeholder="Paste YouTube / Drive link" required />
+          <label for="subLink">Resource Link</label>
+          <input type="url" id="subLink" required />
         </div>
         <div class="form-group">
-          <label>🏷️ Tag</label>
+          <label for="subTag">Tag</label>
           <select id="subTag">
             <option>📕 Notes</option>
             <option>🎥 Video</option>
             <option>🧪 Lab</option>
           </select>
         </div>
-        <button class="btn" type="submit">➕ Add Resource</button>
+        <button type="submit" class="btn">➕ Add Resource</button>
       </form>
     </div>
 
