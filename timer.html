@@ -4,22 +4,20 @@
   <meta charset="UTF-8" />
   <title>StudySync | Timer</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header>
-    <div class="header-left logo-container">
-      <a href="index.html"><img src="StudySync Logo.png" alt="StudySync Logo" class="logo" /></a>
-    </div>
-    <div class="header-center nav-links">
+    <a href="index.html"><img src="StudySync Logo.png" class="logo" alt="StudySync Logo"></a>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="assignments.html">Assignments</a>
       <a href="subjects.html">Subjects</a>
       <a href="notes.html">Notes</a>
       <a href="timer.html" class="active">Timer</a>
-    </div>
-    <div class="header-right">
+    </nav>
+    <div class="theme-toggle">
       <i class="fas fa-sun theme-icon"></i>
       <label class="switch">
         <input type="checkbox" id="themeToggle">
@@ -32,7 +30,7 @@
   <main class="container">
     <div class="card" style="text-align: center;">
       <h2><i class="fas fa-stopwatch"></i> Pomodoro Timer</h2>
-      <div id="timerDisplay" style="font-size: 3.5rem; font-weight: bold; margin: 25px 0;">25:00</div>
+      <div id="timerDisplay" style="font-size: 3rem; font-weight: bold; margin: 25px 0;">25:00</div>
       <div class="button-group" style="justify-content: center;">
         <button class="btn" onclick="startTimer()">▶️ Start</button>
         <button class="btn" onclick="pauseTimer()">⏸️ Pause</button>
