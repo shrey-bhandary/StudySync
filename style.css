@@ -161,30 +161,41 @@ input:checked + .slider:before {
   gap: 15px;
 }
 
-.styled-form input,
-.styled-form select,
-.styled-form textarea {
-  padding: 12px 14px;
+.styled-form,
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  background: #f9f9f9;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
-.styled-form input:focus,
-.styled-form select:focus,
-.styled-form textarea:focus {
-  border-color: #0066cc;
-  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
-  outline: none;
-  background-color: white;
+textarea {
+  resize: vertical;
+  min-height: 80px;
 }
 
-/* Dark theme input */
-.dark-theme .styled-form input,
-.dark-theme .styled-form select,
-.dark-theme .styled-form textarea {
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
   background-color: #1f3a5f;
   color: white;
   border: 1px solid #3c597c;
