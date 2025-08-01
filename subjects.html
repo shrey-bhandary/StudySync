@@ -2,71 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StudySync | Home</title>
+  <title>StudySync | Subjects</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body onload="initializePage()">
- <header>
-  <div class="navbar-container">
-    <a href="index.html" class="logo-container">
-      <img src="StudySync Logo.png" alt="StudySync Logo" class="logo" />
-    </a>
+<body>
 
-    <nav class="nav-links">
+  <header>
+    <div class="header-left logo-container">
+      <a href="index.html"><img src="StudySync Logo.png" alt="StudySync Logo" class="logo" /></a>
+    </div>
+    <div class="header-center nav-links">
       <a href="index.html">Home</a>
       <a href="assignments.html">Assignments</a>
       <a href="subjects.html" class="active">Subjects</a>
       <a href="notes.html">Notes</a>
       <a href="timer.html">Timer</a>
-    </nav>
-
-    <div class="theme-toggle">
-      <i class="fas fa-sun" id="sun-icon"></i>
+    </div>
+    <div class="header-right">
+      <i class="fas fa-sun theme-icon"></i>
       <label class="switch">
-        <input type="checkbox" id="themeToggle" />
+        <input type="checkbox" id="themeToggle">
         <span class="slider"></span>
       </label>
-      <i class="fas fa-moon" id="moon-icon"></i>
+      <i class="fas fa-moon theme-icon"></i>
     </div>
-  </div>
-</header>
-  
-  <div class="container">
+  </header>
+
+  <main class="container">
     <div class="card">
       <h2><i class="fas fa-book"></i> Add Subject Resource</h2>
-      <form id="subjectForm">
+      <form id="subjectForm" class="styled-form">
         <div class="form-group">
-          <label>Subject Name</label>
-          <input type="text" id="subName" required />
+          <label>📘 Subject</label>
+          <input type="text" id="subName" placeholder="e.g. Chemistry" required />
         </div>
         <div class="form-group">
-          <label>Resource Link</label>
-          <input type="url" id="subLink" required />
+          <label>🔗 Resource Link</label>
+          <input type="url" id="subLink" placeholder="Paste YouTube / Drive link" required />
         </div>
         <div class="form-group">
-          <label>Tag</label>
+          <label>🏷️ Tag</label>
           <select id="subTag">
             <option>📕 Notes</option>
             <option>🎥 Video</option>
             <option>🧪 Lab</option>
           </select>
         </div>
-        <button type="submit" class="btn">🔗 Add Resource</button>
+        <button class="btn" type="submit">➕ Add Resource</button>
       </form>
     </div>
 
     <div class="card">
-      <h2>📚 Resources by Subject</h2>
-      <ul id="subjectsList"></ul>
+      <h2><i class="fas fa-layer-group"></i> Resources</h2>
+      <ul id="subjectsList" class="assignment-list"></ul>
     </div>
-  </div>
+  </main>
 
-  <footer>
-    Developed by Shreyas Bhandary
-  </footer>
+  <footer>© 2025 StudySync. All rights reserved.</footer>
   <script src="script.js"></script>
 </body>
 </html>
