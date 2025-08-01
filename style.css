@@ -225,6 +225,9 @@ input:checked + .slider:before {
 /* Footer */
 footer {
   position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: #002244;
   color: white;
   text-align: center;
