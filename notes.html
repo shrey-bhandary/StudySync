@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Notes - StudySync</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudySync | Home</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <header>
+<body onload="initializePage()">
+ <header>
+  <div class="navbar-container">
     <a href="index.html" class="logo-container">
       <img src="StudySync Logo.png" alt="StudySync Logo" class="logo" />
     </a>
+
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="assignments.html">Assignments</a>
@@ -20,16 +22,18 @@
       <a href="notes.html">Notes</a>
       <a href="timer.html">Timer</a>
     </nav>
+
     <div class="theme-toggle">
-      <i class="fas fa-sun theme-icon"></i>
+      <i class="fas fa-sun" id="sun-icon"></i>
       <label class="switch">
         <input type="checkbox" id="themeToggle" />
         <span class="slider"></span>
       </label>
-      <i class="fas fa-moon theme-icon"></i>
+      <i class="fas fa-moon" id="moon-icon"></i>
     </div>
-  </header>
-
+  </div>
+</header>
+  
   <div class="container">
     <div class="card">
       <h2><i class="fas fa-sticky-note"></i> Add a Note</h2>
