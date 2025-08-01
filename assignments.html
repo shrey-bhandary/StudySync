@@ -5,21 +5,193 @@
   <title>StudySync | Assignments</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      transition: background 0.3s;
+    }
+
+    .dark-theme {
+      background-color: #0d1a2d;
+      color: #e0e0e0;
+    }
+
+    header {
+      background-color: #002244;
+      padding: 16px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 45px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: white;
+      color: #002244;
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 25px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 25px;
+    }
+
+    .slider:before {
+      content: "";
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .dark-theme .card {
+      background-color: #14273e;
+      color: white;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #004a99;
+    }
+
+    .assignment-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .assignment-list li {
+      background-color: #eef3f8;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .dark-theme .assignment-list li {
+      background-color: #1a2c46;
+    }
+
+    footer {
+      background-color: #002244;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <div class="header-left logo-container">
-      <a href="index.html"><img src="StudySync Logo.png" alt="StudySync Logo" class="logo" /></a>
-    </div>
-    <div class="header-center nav-links">
+    <a href="index.html"><img src="StudySync Logo.png" class="logo" alt="StudySync Logo"></a>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="assignments.html" class="active">Assignments</a>
       <a href="subjects.html">Subjects</a>
       <a href="notes.html">Notes</a>
       <a href="timer.html">Timer</a>
-    </div>
-    <div class="header-right">
+    </nav>
+    <div class="theme-toggle">
       <i class="fas fa-sun theme-icon"></i>
       <label class="switch">
         <input type="checkbox" id="themeToggle">
@@ -31,44 +203,99 @@
 
   <main class="container">
     <div class="card">
-      <h2><i class="fas fa-tasks"></i> Add New Assignment</h2>
-      <form id="assignmentForm" class="styled-form">
+      <h2><i class="fas fa-plus-circle"></i> Add Assignment</h2>
+      <form id="assignmentForm">
         <div class="form-group">
-          <label>Title</label>
-          <input type="text" id="title" placeholder="e.g. History Project" required>
+          <label for="title">Title</label>
+          <input type="text" id="title" required>
         </div>
         <div class="form-group">
-          <label>Subject</label>
-          <input type="text" id="subject" placeholder="e.g. History" required>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" required>
         </div>
         <div class="form-group">
-          <label>Deadline</label>
+          <label for="deadline">Deadline</label>
           <input type="date" id="deadline" required>
         </div>
         <div class="form-group">
-          <label>Type</label>
+          <label for="type">Type</label>
           <select id="type">
             <option>Homework</option>
             <option>Project</option>
-            <option>Quiz</option>
+            <option>Lab</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Details</label>
-          <textarea id="details" placeholder="Details..."></textarea>
+          <label for="details">Details</label>
+          <textarea id="details" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn">➕ Add Assignment</button>
+        <button type="submit" class="btn">Save Assignment</button>
       </form>
     </div>
 
     <div class="card">
-      <h2><i class="fas fa-list-check"></i> Your Assignments</h2>
+      <h2><i class="fas fa-list"></i> Your Assignments</h2>
       <ul id="assignmentList" class="assignment-list"></ul>
     </div>
   </main>
 
   <footer>© 2025 StudySync. All rights reserved.</footer>
-  <script src="assignments.js"></script>
-  <script src="theme.js"></script>
+
+  <script>
+    // DARK MODE TOGGLE
+    const toggle = document.getElementById("themeToggle");
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-theme");
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark-theme");
+      localStorage.setItem("darkMode", toggle.checked ? "enabled" : "disabled");
+    });
+
+    // ASSIGNMENT LOGIC
+    const form = document.getElementById("assignmentForm");
+    const list = document.getElementById("assignmentList");
+    const assignments = JSON.parse(localStorage.getItem("assignments") || "[]");
+
+    function renderAssignments() {
+      list.innerHTML = "";
+      assignments.forEach((a, i) => {
+        list.innerHTML += `
+          <li>
+            <strong>${a.title}</strong> (${a.subject})<br>
+            Due: ${a.deadline}<br>
+            ${a.type}<br>
+            ${a.details}
+            <br><button onclick="deleteAssignment(${i})" class="btn" style="margin-top:10px;">🗑️ Delete</button>
+          </li>
+        `;
+      });
+    }
+
+    function deleteAssignment(i) {
+      assignments.splice(i, 1);
+      localStorage.setItem("assignments", JSON.stringify(assignments));
+      renderAssignments();
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = {
+        title: form.title.value,
+        subject: form.subject.value,
+        deadline: form.deadline.value,
+        type: form.type.value,
+        details: form.details.value
+      };
+      assignments.push(data);
+      localStorage.setItem("assignments", JSON.stringify(assignments));
+      form.reset();
+      renderAssignments();
+    });
+
+    renderAssignments();
+  </script>
 </body>
 </html>
