@@ -53,8 +53,25 @@ header {
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
+.nav-links a:hover {
+  background-color: #004a99;
+}
+
+.nav-links a.active {
+  background-color: white;
+  color: #002244;
+}
+
+/* Dark theme active link fix */
+.dark-theme .nav-links a.active {
+  background-color: #e0e0e0;
+  color: #002244;
+}
 /* Theme Toggle */
 .theme-toggle {
   display: flex;
@@ -116,36 +133,72 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-/* Container */
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
-/* Cards */
 .card {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  transition: box-shadow 0.2s ease;
 }
 
-/* Buttons */
+.card:hover {
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.dark-theme .card {
+  background-color: #14273e;
+}
+
 .button-group {
   display: flex;
   gap: 15px;
 }
 
+.styled-form input,
+.styled-form select,
+.styled-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.styled-form input:focus,
+.styled-form select:focus,
+.styled-form textarea:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+  outline: none;
+  background-color: white;
+}
+
+/* Dark theme input */
+.dark-theme .styled-form input,
+.dark-theme .styled-form select,
+.dark-theme .styled-form textarea {
+  background-color: #1f3a5f;
+  color: white;
+  border: 1px solid #3c597c;
+}
+
 .btn {
   background-color: #0066cc;
   color: white;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -176,7 +229,6 @@ input:checked + .slider:before {
   color: #002244;
 }
 
-/* Dark Theme */
 .dark-theme {
   background-color: #0d1a2d;
   color: #e0e0e0;
@@ -195,34 +247,28 @@ input:checked + .slider:before {
 .dark-theme .time {
   color: white;
 }
-/* Assignment list */
-.assignment-list {
-  list-style: none;
-  padding-left: 0;
-}
 
 .assignment-list li {
   background: #eef3f8;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 12px;
   line-height: 1.6;
-  position: relative;
+  transition: background 0.2s;
 }
 
-.assignment-list li strong {
-  color: #004a99;
-}
-
-.assignment-list li button {
-  margin-top: 10px;
+.assignment-list li:hover {
+  background: #ddeaf6;
 }
 
 .dark-theme .assignment-list li {
   background: #1a2c46;
 }
 
-/* Footer */
+.assignment-list button {
+  margin-top: 10px;
+}
+
 footer {
   position: fixed;
   left: 0;
