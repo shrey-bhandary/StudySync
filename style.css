@@ -270,6 +270,9 @@ input:checked + .slider:before {
 }
 
 footer {
+  position : absolute;
+  left = 0;
+  bottom = 0;
   width: 100%;
   background-color: #022341;
   color: white;
