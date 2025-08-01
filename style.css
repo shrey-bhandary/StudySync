@@ -259,25 +259,20 @@ textarea {
   color: white;
 }
 
-.assignment-list li {
-  background: #eef3f8;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  line-height: 1.6;
-  transition: background 0.2s;
+.assignment-list {
+  list-style: none;
+  padding-left: 0;
 }
 
-.assignment-list li:hover {
-  background: #ddeaf6;
+.assignment-list li {
+  background-color: #eef3f8;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
 .dark-theme .assignment-list li {
-  background: #1a2c46;
-}
-
-.assignment-list button {
-  margin-top: 10px;
+  background-color: #1a2c46;
 }
 
 footer {
