@@ -1,4 +1,4 @@
-// Dark Mode Toggle
+// ========== DARK MODE TOGGLE ========== //
 const themeToggle = document.getElementById("themeToggle");
 if (themeToggle) {
   if (localStorage.getItem("darkMode") === "enabled") {
@@ -17,7 +17,32 @@ if (themeToggle) {
   });
 }
 
-// Save Assignments
+// ========== HOME ========== //
+ const quotes = [
+    "Push yourself, because no one else is going to do it for you.",
+    "Success doesn’t come from what you do occasionally. It comes from what you do consistently.",
+    "Don’t watch the clock; do what it does. Keep going.",
+    "Start where you are. Use what you have. Do what you can."
+  ];
+
+  function initializePage() {
+    const name = localStorage.getItem('studentName') || prompt("What's your name?");
+    localStorage.setItem('studentName', name);
+    document.getElementById("welcome-msg").innerText = `Welcome, ${name}!`;
+
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote").innerText = quote;
+
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById("date").innerText = now.toLocaleDateString();
+      document.getElementById("time").innerText = now.toLocaleTimeString();
+    }, 1000);
+  }
+
+
+
+// ========== ASSIGNMENTS ========== //
 const form = document.getElementById("assignmentForm");
 const list = document.getElementById("assignmentList");
 
@@ -168,3 +193,4 @@ function resetTimer() {
 }
 
 updateTimer();
+
