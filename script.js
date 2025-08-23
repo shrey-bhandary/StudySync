@@ -178,32 +178,62 @@ if (subjectForm.length) {
 }
 
 // ========== TIMER ========== //
-let time = 1500; // 25 min
 let timer;
-const display = $("#timerDisplay");
+let timeLeft = 25 * 60; // default 25 min
+let isRunning = false;
+let currentMode = "pomodoro"; // track active mode
 
-function updateTimer() {
-  const minutes = String(Math.floor(time / 60)).padStart(2, "0");
-  const seconds = String(time % 60).padStart(2, "0");
-  if (display.length) display.text(`${minutes}:${seconds}`);
+function updateDisplay() {
+  const minutes = Math.floor(timeLeft / 60).toString().padStart(2, "0");
+  const seconds = (timeLeft % 60).toString().padStart(2, "0");
+  document.getElementById("timerDisplay").textContent = `${minutes}:${seconds}`;
 }
 
+function setActiveMode(button) {
+  document.querySelectorAll(".mode-btn").forEach(btn => btn.classList.remove("active"));
+  button.classList.add("active");
+}
+
+// Mode Functions
+function setPomodoro() {
+  clearInterval(timer);
+  isRunning = false;
+  currentMode = "pomodoro";
+  timeLeft = 25 * 60;
+  updateDisplay();
+  setActiveMode(document.querySelector(".mode-buttons button:nth-child(1)"));
+}
+
+function setShortBreak() {
+  clearInterval(timer);
+  isRunning = false;
+  currentMode = "short";
+  timeLeft = 5 * 60;
+  updateDisplay();
+  setActiveMode(document.querySelector(".mode-buttons button:nth-child(2)"));
+}
+
+function setLongBreak() {
+  clearInterval(timer);
+  isRunning = false;
+  currentMode = "long";
+  timeLeft = 15 * 60;
+  updateDisplay();
+  setActiveMode(document.querySelector(".mode-buttons button:nth-child(3)"));
+}
+
+// Start / Pause / Reset
 function startTimer() {
-  if (!timer) {
+  if (!isRunning) {
+    isRunning = true;
     timer = setInterval(() => {
-      time--;
-      updateTimer();
-      if (time <= 0) {
+      if (timeLeft > 0) {
+        timeLeft--;
+        updateDisplay();
+      } else {
         clearInterval(timer);
-        timer = null;
-        $("<div class='alert'>⏰ Time’s up! Take a break.</div>")
-          .hide()
-          .appendTo("body")
-          .fadeIn(500)
-          .delay(2000)
-          .fadeOut(500, function () {
-            $(this).remove();
-          });
+        isRunning = false;
+        alert("⏰ Time’s up!");
       }
     }, 1000);
   }
@@ -211,12 +241,23 @@ function startTimer() {
 
 function pauseTimer() {
   clearInterval(timer);
-  timer = null;
+  isRunning = false;
 }
 
 function resetTimer() {
-  time = 1500;
-  updateTimer();
+  clearInterval(timer);
+  isRunning = false;
+
+  // reset based on current mode
+  if (currentMode === "pomodoro") {
+    timeLeft = 25 * 60;
+  } else if (currentMode === "short") {
+    timeLeft = 5 * 60;
+  } else if (currentMode === "long") {
+    timeLeft = 15 * 60;
+  }
+
+  updateDisplay();
 }
 
-updateTimer();
+updateDisplay();
