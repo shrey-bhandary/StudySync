@@ -28,21 +28,33 @@
     </div>
   </header>
 
-  <main class="container">
-    <div class="card" style="text-align: center;">
-      <h2><i class="fas fa-stopwatch"></i> Pomodoro Timer</h2>
-      <div id="timerDisplay" style="font-size: 3rem; font-weight: bold; margin: 25px 0;">25:00</div>
-      <div class="button-group" style="justify-content: center;">
-        <button class="btn" onclick="startTimer()">▶️ Start</button>
-        <button class="btn" onclick="pauseTimer()">⏸️ Pause</button>
-        <button class="btn" onclick="resetTimer()">🔄 Reset</button>
-      </div>
+ <main class="container">
+  <div class="card timer-card">
+    <h2><i class="fas fa-stopwatch"></i> Pomodoro Timer</h2>
+
+    <!-- Mode Buttons -->
+    <div class="mode-buttons">
+      <button class="mode-btn active" onclick="setPomodoro()">Pomodoro</button>
+      <button class="mode-btn" onclick="setShortBreak()">Short Break</button>
+      <button class="mode-btn" onclick="setLongBreak()">Long Break</button>
     </div>
-  </main>
+
+    <!-- Timer Display -->
+    <div id="timerDisplay" class="timer-display">25:00</div>
+
+    <!-- Controls -->
+    <div class="button-group" style="justify-content: center;">
+      <button class="btn" onclick="startTimer()">▶️ Start</button>
+      <button class="btn" onclick="pauseTimer()">⏸️ Pause</button>
+      <button class="btn" onclick="resetTimer()">🔄 Reset</button>
+    </div>
+  </div>
+</main>
 
   <footer style = "color:white;">
     &copy; Developed by <a href="https://github.com/shrey-bhandary" target="_blank" rel="noopener noreferrer" style="color:white;">Shreyas Bhandary</a>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
